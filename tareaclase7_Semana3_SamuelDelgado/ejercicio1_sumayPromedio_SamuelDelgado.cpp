@@ -2,6 +2,7 @@
 Autor: Samuel José Delgado Chacón.
 Fecha: 10 - 09 - 2026
 Bootcamp Curso de Fundamentos de la Programación Orientada a Objetos por Jonathan Torres.
+Paralelo: A (Lunes, Miércoles y Viernes).
 
 Requisitos generales
 • Todos los ejercicios deben resolverse usando funciones.
