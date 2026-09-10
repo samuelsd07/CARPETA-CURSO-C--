@@ -67,7 +67,7 @@ int main() {
     int suma = calcularSuma(numero1, numero2, numero3);
     double promedio = calcularPromedio(suma);
 
-    // Se llama a la función de salida, la que mostrará los resultados de la suma y del promedio.
+    // Se llama a la función de salida, la que mostrará la suma y el promedio.
     mostrarResultados(suma, promedio);
 
     return 0;
