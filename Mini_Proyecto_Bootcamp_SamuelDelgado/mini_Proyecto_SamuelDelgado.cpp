@@ -23,4 +23,55 @@ int main() {
     int totalRegistros = 0; // Contador de tarjetas guardadas
     int opcion = 0;
 
-    
+    // Bucle repetitivo para el menu principal
+    do {
+        mostrarMenu();
+        cin >> opcion;
+
+        // Validacion para ver si lo que se ingresa es válido o inválido.
+        while (opcion < 1 || opcion > 6) {
+            cout << "Opcion no valida. Ingrese un numero entre 1 y 6: ";
+            cin >> opcion;
+        }
+
+        switch (opcion) {
+            case 1:
+                registrarTarjeta(codigos, saldos, tipos, totalRegistros);
+                break;
+            case 2:
+                mostrarTarjetas(codigos, saldos, tipos, totalRegistros);
+                break;
+            case 3:
+                buscarTarjeta(codigos, saldos, tipos, totalRegistros);
+                break;
+            case 4:
+                mostrarReporteGeneral(codigos, saldos, tipos, totalRegistros);
+                break;
+            case 5:
+                ejecutarComponenteCreativo(codigos, saldos, tipos, totalRegistros);
+                break;
+            case 6:
+                cout << "\nGracias por usar MoveCard. Hasta una próxima ocasión...\n";
+                break;
+        }
+
+    } while (opcion != 6);
+
+    return 0;
+}
+
+// 1. Menú de opciones:
+void mostrarMenu() {
+    cout << "\n=========================================\n";
+    cout << "     SISTEMA DE TARJETAS MOVECARD        \n";
+    cout << "=========================================\n";
+    cout << "1. Registrar tarjeta MoveCard\n";
+    cout << "2. Mostrar todas las tarjetas\n";
+    cout << "3. Buscar tarjeta por codigo UID\n";
+    cout << "4. Ver reporte general de saldos\n";
+    cout << "5. Recarga con bonificacion (Creativo)\n";
+    cout << "6. Salir\n";
+    cout << "=========================================\n";
+    cout << "Seleccione una opcion: ";
+}
+
