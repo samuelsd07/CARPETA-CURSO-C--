@@ -163,3 +163,90 @@ void buscarTarjeta(const string codigos[], const double saldos[], const int tipo
     }
 }
 
+// 5. Reporte general:
+void mostrarReporteGeneral(const string codigos[], const double saldos[], const int tipos[], int total) {
+    if (total == 0) {
+        cout << "\nRegistre tarjetas para ver el reporte general.\n";
+        return;
+    }
+
+    double sumaSaldos = 0;
+    int posicionMayor = 0;
+    int contadorEstudiantes = 0;
+
+    for (int i = 0; i < total; i++) {
+        sumaSaldos = sumaSaldos + saldos[i];
+
+        // Calculo del mayor valor
+        if (saldos[i] > saldos[posicionMayor]) {
+            posicionMayor = i;
+        }
+
+        // Conteo con condicion
+        if (tipos[i] == 2) {
+            contadorEstudiantes++;
+        }
+    }
+
+    double promedio = sumaSaldos / total;
+
+    cout << "\n=========================================\n";
+    cout << "         REPORTE GENERAL DE RED          \n";
+    cout << "=========================================\n";
+    cout << "1. Saldo promedio acumulado: $" << promedio << "\n";
+    cout << "2. Tarjeta con mayor saldo: " << codigos[posicionMayor] << " ($" << saldos[posicionMayor] << ")\n";
+    cout << "3. Cantidad de tarjetas estudiantiles: " << contadorEstudiantes << "\n";
+    
+}
+
+// 6. Componente Creativo: Recarga con bonificacion automatica por categoria
+void ejecutarComponenteCreativo(const string codigos[], double saldos[], const int tipos[], int total) {
+    if (total == 0) {
+        cout << "\nNo hay tarjetas para recargar.\n";
+        return;
+    }
+
+    string codigoBuscado;
+    cout << "\n--- RECARGA CON BONIFICACION ESPECIAL ---\n";
+    cout << "Ingrese el codigo UID de la tarjeta a recargar: ";
+    cin >> codigoBuscado;
+
+    int indice = -1;
+    for (int i = 0; i < total; i++) {
+        if (codigos[i] == codigoBuscado) {
+            indice = i;
+            break;
+        }
+    }
+
+    if (indice == -1) {
+        cout << "La tarjeta ingresada no existe.\n";
+        return;
+    }
+
+    double montoRecarga = 0;
+    cout << "Ingrese el monto a recargar ($1.00 a $50.00):$";
+    cin >> montoRecarga;
+
+    while (montoRecarga < 1.0 || montoRecarga > 50.0) {
+        cout << "El monto permitido es de $1.00 a $50.00:$";
+        cin >> montoRecarga;
+    }
+
+    double regalo = 0;
+    if (tipos[indice] == 2) { 
+        regalo = montoRecarga * 0.20; // 20% extra a estudiantes
+        cout << ">> ¡Beneficio aplicado! +20% extra por Tarjeta Estudiantil.\n";
+    } else if (tipos[indice] == 3) { 
+        regalo = montoRecarga * 0.30; // 30% extra a tercera edad
+        cout << ">> ¡Beneficio aplicado! +30% extra por Tarjeta Tercera Edad.\n";
+    }
+
+    double totalAcreditado = montoRecarga + regalo;
+    saldos[indice] = saldos[indice] + totalAcreditado;
+
+    cout << "\n--- RESUMEN DE LA TRANSACCION ---\n";
+    cout << " - Recarga ingresada: $" << montoRecarga << "\n";
+    cout << " - Saldo regalo     : $" << regalo << "\n";
+    cout << " - Saldo final nuevo: $" << saldos[indice] << "\n";
+}
