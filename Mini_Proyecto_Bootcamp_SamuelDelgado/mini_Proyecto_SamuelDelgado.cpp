@@ -107,3 +107,59 @@ void registrarTarjeta(string codigos[], double saldos[], int tipos[], int &total
     cout << ">> ¡Tarjeta registrada exitosamente!\n";
 }
 
+// 3. Mostrar el listado de tarjetas registradas
+void mostrarTarjetas(const string codigos[], const double saldos[], const int tipos[], int total) {
+    // Validacion de caso borde: Sin datos ingresados
+    if (total == 0) {
+        cout << "\nNo hay tarjetas registradas todavia.\n";
+        return;
+    }
+
+    cout << "\n---------------------------------------------------\n";
+    cout << "N°\tCODIGO UID\tSALDO ($)\tTIPO\n";
+    cout << "---------------------------------------------------\n";
+    for (int i = 0; i < total; i++) {
+        string nombreTipo = "General";
+        if (tipos[i] == 2) {
+            nombreTipo = "Estudiantil";
+        } else if (tipos[i] == 3) {
+            nombreTipo = "Tercera Edad";
+        }
+
+        cout << (i + 1) << "\t" << codigos[i] << "\t\t$" << saldos[i] << "\t\t" << nombreTipo << "\n";
+    }
+}
+
+// 4. Buscar una tarjeta mediante Búsqueda Secuencial
+void buscarTarjeta(const string codigos[], const double saldos[], const int tipos[], int total) {
+    if (total == 0) {
+        cout << "\nNo existen datos para realizar la busqueda.\n";
+        return;
+    }
+
+    string codigoBuscado;
+    cout << "\nIngrese el codigo UID a buscar: ";
+    cin >> codigoBuscado;
+
+    bool encontrado = false;
+    for (int i = 0; i < total; i++) {
+        if (codigos[i] == codigoBuscado) {
+            string nombreTipo = "General";
+            if (tipos[i] == 2) nombreTipo = "Estudiantil";
+            if (tipos[i] == 3) nombreTipo = "Tercera Edad";
+
+            cout << "\n--- TARJETA ENCONTRADA ---\n";
+            cout << " - Codigo: " << codigos[i] << "\n";
+            cout << " - Saldo: $" << saldos[i] << "\n";
+            cout << " - Tipo de usuario: " << nombreTipo << "\n";
+            
+            encontrado = true;
+            break; // Detener la busqueda por coincidencias.
+        }
+    }
+
+    if (!encontrado) {
+        cout << "\nLa tarjeta " << codigoBuscado << " no esta registrada.\n";
+    }
+}
+
