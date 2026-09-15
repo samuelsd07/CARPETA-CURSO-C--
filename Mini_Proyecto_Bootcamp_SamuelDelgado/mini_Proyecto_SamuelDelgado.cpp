@@ -1,3 +1,18 @@
+/*
+Autor: Samuel José Delgado Chacón.
+Fecha: 10 - 09 - 2026
+Bootcamp Curso de Fundamentos de la Programación Orientada a Objetos por Jonathan Torres.
+Paralelo: A (Lunes, Miércoles y Viernes).
+
+MINI PROYECTO MOVECARD
+Sistema de registro y pago de tarjeta para transporte público.
+
+Entrada: Elegir una de las 6 opciones del menú de MOVECARD y regitrar, ingresar o buscar una tarjeta.
+Proceso: Ingreso de tarjeta, búsqueda, cálculos del saldo y pagos.
+Salida: Registro exitoso de tarjeta, saldo actual, reporte general.
+
+*/
+
 #include <iostream>
 #include <string>
 
@@ -69,7 +84,7 @@ void mostrarMenu() {
     cout << "2. Mostrar todas las tarjetas\n";
     cout << "3. Buscar tarjeta por codigo UID\n";
     cout << "4. Ver reporte general de saldos\n";
-    cout << "5. Recarga con bonificacion (Creativo)\n";
+    cout << "5. Recarga con bonificacion (Aspecto Creativo)\n";
     cout << "6. Salir\n";
     cout << "=========================================\n";
     cout << "Seleccione una opcion: ";
