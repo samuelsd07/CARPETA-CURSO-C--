@@ -17,12 +17,12 @@ public class App {
 
         // Cambio de precio válido
         System.out.println("Actualizando a un precio valido...");
-        t1.setPrecio(280.0);
+        t1.setPrecio(467.0);
         t1.mostrarInfo();
 
         // Prueba de cambio de precio inválido (que sea negativo)
         System.out.println("Intentando ingresar un precio invalido...");
-        t1.setPrecio(-50.0);
+        t1.setPrecio(-67.0);
         t1.mostrarInfo();
     }
 }
