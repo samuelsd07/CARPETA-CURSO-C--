@@ -6,6 +6,6 @@ public class Mago extends Personaje {
 
     @Override
     public String realizarAccion() {
-        return "lanza un hechizo";
+        return "Mago lanza un hechizo";
     }
 }

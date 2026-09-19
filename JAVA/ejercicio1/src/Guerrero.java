@@ -6,6 +6,6 @@ public class Guerrero extends Personaje {
 
     @Override
     public String realizarAccion() {
-        return "ataca con su espada";
+        return "Guerrero ataca con su espada y escudo.";
     }
 }

@@ -23,12 +23,12 @@ public class Personaje {
         return nivel;
     }
 
-    // Metodo para mostrar la informacion
+    // Aquí se mostrará la información
     public void mostrarInfo() {
         System.out.println("ID: " + id + ", Nombre: " + nombre + ", Nivel: " + nivel);
     }
 
-    // Metodo base para la accion
+    // Aquí se mostrará la acción del personaje
     public String realizarAccion() {
         return "El personaje realiza una accion";
     }
