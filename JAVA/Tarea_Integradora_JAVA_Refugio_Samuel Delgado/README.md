@@ -1,18 +1,15 @@
-## Getting Started
+# Bootcamp Fundamentos de la Programación por Jonathan Torres.
+# Sistema de Gestión para Refugio de Animales
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto es una aplicación de menú en JAVA POO para la gestión de un refugio de animales.
 
-## Folder Structure
+## Autor: Samuel José Delgado Chacón.
+## Fecha: 20 - 09 - 2026.
 
-The workspace contains two folders by default, where:
+## Clases principales
+- **Animal.java**: Clase base con los atributos id, nombre, edad y estado.
+- **Perro.java**: Clase hija que hereda de Animal e incluye el atributo raza.
+- **Gato.java**: Clase hija que hereda de Animal e incluye el atributo color.
+- **Refugio.java**: Clase encargada de manejar la lista ArrayList y la lógica del sistema.
+- **Main.java**: Contiene el menú principal.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
